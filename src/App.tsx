@@ -33,7 +33,7 @@ import {
   CreateProperty,
   AgentProfile,
   EditProperty,
-} from 'pages/login';
+} from 'pages';
 import { CredentialResponse } from 'interfaces/google';
 import { parseJwt } from 'utils/parse-jwt';
 
