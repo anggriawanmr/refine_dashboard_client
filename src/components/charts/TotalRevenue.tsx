@@ -19,7 +19,7 @@ const TotalRevenue = () => {
         Total Revenue
       </Typography>
 
-      <Stack my={20} direction="row" gap={4} flexWrap="wrap">
+      <Stack my="20px" direction="row" gap={4} flexWrap="wrap">
         <Typography fontSize={28} fontWeight={700} color="#11142d">
           $236,535
         </Typography>
@@ -35,6 +35,13 @@ const TotalRevenue = () => {
           </Stack>
         </Stack>
       </Stack>
+
+      <ReactApexChart
+        series={TotalRevenueSeries}
+        type="bar"
+        height={310}
+        options={TotalRevenueOptions}
+      />
     </Box>
   );
 };
