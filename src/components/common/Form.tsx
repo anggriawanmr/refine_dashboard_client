@@ -49,7 +49,7 @@ const Form = ({
                 color: '#11142d',
               }}
             >
-              Enter property name
+              Enter Property Name
             </FormHelperText>
             <TextField
               fullWidth
@@ -71,7 +71,7 @@ const Form = ({
                 color: '#11142d',
               }}
             >
-              Enter property name
+              Enter Description
             </FormHelperText>
             <TextareaAutosize
               minRows={5}
@@ -103,7 +103,7 @@ const Form = ({
                   color: '#11142d',
                 }}
               >
-                Select property type
+                Select Property Type
               </FormHelperText>
               <Select
                 variant="outlined"
@@ -136,7 +136,7 @@ const Form = ({
                   color: '#11142d',
                 }}
               >
-                Enter property price
+                Enter Property Price
               </FormHelperText>
               <TextField
                 fullWidth
@@ -161,7 +161,7 @@ const Form = ({
                 color: '#11142d',
               }}
             >
-              Enter location
+              Enter Location
             </FormHelperText>
             <TextField
               fullWidth
