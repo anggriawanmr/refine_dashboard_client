@@ -1,9 +1,5 @@
 import { Typography, Box, Stack } from '@pankod/refine-mui';
-import {
-  useDelete,
-  useGetIdentity,
-  useShow,
-} from '@pankod/refine-core/dist/hooks';
+import { useDelete, useGetIdentity, useShow } from '@pankod/refine-core';
 import { useParams, useNavigate } from '@pankod/refine-react-router-v6';
 import {
   ChatBubble,
@@ -16,7 +12,7 @@ import {
 
 import { CustomButton } from 'components';
 
-const propertyDetails = () => {
+const PropertyDetails = () => {
   const navigate = useNavigate();
   const { data: user } = useGetIdentity();
   const { id } = useParams();
@@ -40,8 +36,25 @@ const propertyDetails = () => {
       <Typography fontSize={25} fontWeight={700} color="#11142d">
         Details
       </Typography>
+
+      <Box
+        mt="20px"
+        display="flex"
+        flexDirection={{ xs: 'column', lg: 'row' }}
+        gap={4}
+      >
+        <Box flex={1} maxWidth={764}>
+          <img
+            src={propertyDetails.photo}
+            alt={propertyDetails.title}
+            height={546}
+            style={{ objectFit: 'cover', borderRadius: '10px' }}
+            className="property_details-img"
+          />
+        </Box>
+      </Box>
     </Box>
   );
 };
 
-export default propertyDetails;
+export default PropertyDetails;
