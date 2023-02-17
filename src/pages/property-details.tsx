@@ -51,6 +51,29 @@ const PropertyDetails = () => {
             style={{ objectFit: 'cover', borderRadius: '10px' }}
             className="property_details-img"
           />
+
+          <Box mt="15px">
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              flexWrap="wrap"
+              alignItems="center"
+            >
+              <Typography
+                fontSize={18}
+                fontWeight={500}
+                color="#11142d"
+                textTransform="capitalize"
+              >
+                {propertyDetails.propertyType}
+              </Typography>
+              <Box>
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={`star-${star}`} sx={{ color: '#f2c94c' }} />
+                ))}
+              </Box>
+            </Stack>
+          </Box>
         </Box>
       </Box>
     </Box>
