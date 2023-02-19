@@ -12,7 +12,15 @@ const AgentCard = ({
   avatar,
   noOfProperties,
 }: AgentCardProp) => {
-  return <div>AgentCard</div>;
+  const { data: currentUser } = useGetIdentity();
+
+  const generateLink = () => {
+    if (currentUser.email === email) return '/my-profile';
+
+    return `/agent/show/${id}`;
+  };
+
+  return <Box component={Link} to={generateLink()}></Box>;
 };
 
 export default AgentCard;
