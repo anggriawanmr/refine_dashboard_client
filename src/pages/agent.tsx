@@ -13,6 +13,8 @@ const Agent = () => {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error...</div>;
 
+  console.log(allAgents);
+
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142d">
