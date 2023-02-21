@@ -1,4 +1,4 @@
-import { useList } from '@pankod/refine-core/dist/hooks/data/useList';
+import { useList } from '@pankod/refine-core';
 import { Typography, Box, Stack } from '@pankod/refine-mui';
 
 import {
@@ -9,7 +9,7 @@ import {
   TopAgent,
 } from 'components';
 
-const home = () => {
+const Home = () => {
   const { data, isLoading, isError } = useList({
     resource: 'properties',
     config: {
@@ -18,6 +18,11 @@ const home = () => {
       },
     },
   });
+
+  const latestProperties = data?.data ?? [];
+
+  if (isLoading) return <Typography>Loading...</Typography>;
+  if (isError) return <Typography>Something went wrong</Typography>;
 
   return (
     <Box>
@@ -71,10 +76,21 @@ const home = () => {
           Latest Properties
         </Typography>
 
-        <Box mt={2.5} sx={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}></Box>
+        <Box mt={2.5} sx={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+          {latestProperties.map((property) => (
+            <PropertyCard
+              key={property.id}
+              id={property._id}
+              title={property.title}
+              location={property.location}
+              price={property.price}
+              photo={property.photo}
+            />
+          ))}
+        </Box>
       </Box>
     </Box>
   );
 };
 
-export default home;
+export default Home;
