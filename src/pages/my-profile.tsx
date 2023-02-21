@@ -3,10 +3,10 @@ import { useGetIdentity, useOne } from '@pankod/refine-core';
 import { Profile } from 'components';
 
 const MyProfile = () => {
-  const { data: user } = useGetIdentity();
+  const { data: User } = useGetIdentity();
   const { data, isLoading, isError } = useOne({
     resource: 'users',
-    id: user?.userid,
+    id: User?.userid,
   });
 
   const myProfile = data?.data ?? [];
