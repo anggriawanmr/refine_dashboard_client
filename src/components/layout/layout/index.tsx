@@ -1,9 +1,9 @@
-import React from "react";
-import { LayoutProps } from "@pankod/refine-core";
-import { Box } from "@pankod/refine-mui";
+import React from 'react';
+import { LayoutProps } from '@pankod/refine-core';
+import { Box } from '@pankod/refine-mui';
 
-import { Sider as DefaultSider } from "../sider";
-import { Header as DefaultHeader } from "../header";
+import { Sider as DefaultSider } from '../sider';
+import { Header as DefaultHeader } from '../header';
 
 export const Layout: React.FC<LayoutProps> = ({
   Sider,
@@ -20,10 +20,10 @@ export const Layout: React.FC<LayoutProps> = ({
       <SiderToRender />
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
+          display: 'flex',
+          flexDirection: 'column',
           flex: 1,
-          minHeight: "100vh",
+          minHeight: '100vh',
         }}
       >
         <HeaderToRender />
@@ -32,7 +32,7 @@ export const Layout: React.FC<LayoutProps> = ({
           sx={{
             p: { xs: 1, md: 2, lg: 3 },
             flexGrow: 1,
-            bgcolor: (theme) => theme.palette.background.default,
+            bgcolor: (theme) => theme.palette.background.paper,
           }}
         >
           {children}
