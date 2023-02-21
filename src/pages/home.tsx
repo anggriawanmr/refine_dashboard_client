@@ -10,6 +10,15 @@ import {
 } from 'components';
 
 const home = () => {
+  const { data, isLoading, isError } = useList({
+    resource: 'properties',
+    config: {
+      pagination: {
+        pageSize: 5,
+      },
+    },
+  });
+
   return (
     <Box>
       <Typography fontSize={25} fontWeight={700} color="#11142D">
@@ -47,6 +56,23 @@ const home = () => {
         <TotalRevenue />
         <PropertyReferrals />
       </Stack>
+
+      <Box
+        flex={1}
+        borderRadius="15px"
+        padding="20px"
+        bgcolor="#fcfcfc"
+        display="flex"
+        flexDirection="column"
+        minWidth="100%"
+        mt="25px"
+      >
+        <Typography fontSize="18px" fontWeight={600} color="#11142d">
+          Latest Properties
+        </Typography>
+
+        <Box mt={2.5} sx={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}></Box>
+      </Box>
     </Box>
   );
 };
